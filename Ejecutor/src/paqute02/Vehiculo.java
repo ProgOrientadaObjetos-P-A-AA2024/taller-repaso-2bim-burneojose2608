@@ -2,45 +2,34 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ejecutor;
+package paqute02;
 
 /**
  *
  * @author USUARIO
  */
-public abstract class Concesionaria {
-protected Propietario propietario;
+public abstract class Vehiculo {
     protected String marca;
     protected double precioBase;
     protected double precioFinal;
 
-    public Concesionaria(Propietario p, String m, double pb, double pf) {
-        propietario = p;
-        marca = m;
-        precioBase = pb;
-        precioFinal = pf;
+    public Vehiculo(String x, double d) {
+        marca = x;
+        precioBase = d;
     }
-    
+
     public abstract void calcularPrecioFinal();
 
-    public void establecerPropietario(Propietario pro) {
-        propietario = pro;
+    public void establecerMarca(String x) {
+        marca = x;
     }
 
-    public void establecerMarca(String m) {
-        marca = m;
+    public void establecerPrecioBase(double x) {
+        precioBase = x;
     }
 
-    public void establecerPrecioBase(double pb) {
-        precioBase = pb;
-    }
-
-    public void establecerPrecioFinal() {
-       
-    }
-
-public Propietario obtenerPropietario() {
-        return propietario;
+    public void establecerPrecioFinal(double x) {
+        precioFinal = x;
     }
 
     public String obtenerMarca() {
@@ -55,19 +44,16 @@ public Propietario obtenerPropietario() {
         return precioFinal;
     }
 
-      @Override
+    @Override
     public String toString() {
         return String.format("""
                              VEHICULO
                              ---------------------------------
-                             Propietario: 
+                             
                              Marca: %s
                              Precio Base: %.2f
                              Precio Final: %.2f
                              """,
-                obtenerPropietario(),obtenerMarca(),obtenerPrecioBase(),
-                obtenerPrecioFinal());
+                obtenerMarca(), obtenerPrecioBase(), obtenerPrecioFinal());
     }
-
-
 }
